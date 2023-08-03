@@ -2,8 +2,8 @@
 #include"DxLib.h"
 
 //画面サイズ
-#define _SCREEN_HEIGHT_ 480	//縦
-#define _SCREEN_WIDHT_	640	//横
+#define _SCREEN_HEIGHT_ 720		//縦
+#define _SCREEN_WIDHT_	1280	//横
 
 //色
 #define C_RED   GetColor(255,0,0)		//赤
