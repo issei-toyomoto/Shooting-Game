@@ -32,7 +32,7 @@ int WINAPI WinMain(_In_ HINSTANCE ih, _In_opt_ HINSTANCE ioh, _In_ LPSTR il, _In
 
 	SetDrawScreen(DX_SCREEN_BACK);	// 描画先画面を裏にする
 
-	SceneManager sceneMng(dynamic_cast<AbstractScene*>(new Title()));
+	SceneManager sceneMng(dynamic_cast<AbstractScene*>(new GameMain()));
 	FPS fps;
 
 	//ゲームループ
