@@ -14,5 +14,5 @@ public:
 	//引数　：GameMainのポインタを受け取る
 	//戻り値：なし
 	//SpawnBulletで弾を生成する
-	void Shoot(GameMain* GameMain);
+	virtual void Shoot(GameMain* GameMain);
 };
