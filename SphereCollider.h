@@ -1,15 +1,18 @@
-#pragma once
+﻿#pragma once
 
-//�~�`�̓����蔻��
-//������p�����ē����蔻������
+//円形の当たり判定
+//これを継承して当たり判定を作る
 class SphereCollider 
 {
 private:
-	float location;
-	float radius;
+	float location;	//中心座標
+	float radius;	//半径
 public:
-	//�����@�FSpherCollider���󂯎��
-	//�߂�l�FSpherCollider���m�̓����蔻����s�������������ǂ�����Ԃ�
-	//�~�`�œ����蔻����s��
+	/*
+	* 引数　：SpherColliderを受け取る
+	* 戻り値：SpherCollider同士の当たり判定を行い当たったかどうかを返す
+	* 　　　　(0:当たってない 1:プレイヤーと敵が当たった　2:プレイヤーと弾が当たった 3:敵と弾が当たった 4:敵と敵が当たった)
+	* 円形で当たり判定を行う
+	*/
 	virtual int CheckCollision(SphereCollider collision);
 };

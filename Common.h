@@ -11,3 +11,11 @@
 #define C_BLUE  GetColor(0,0,255)		//青
 #define C_BLACK GetColor(0,0,0)			//黒
 #define C_WHITE GetColor(255,255,255)	//白
+
+//プレイヤー
+
+//敵
+#define MAX_ENEMY_NUM 10000
+
+//弾
+#define MAX_BULLET_NUM 1000000

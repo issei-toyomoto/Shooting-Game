@@ -141,11 +141,14 @@
   <ItemGroup>
     <ClCompile Include="AppMain.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="CharaBase.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameMain.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="NwaySpawner.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SphereCollider.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractScene.h" />
@@ -156,6 +159,7 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="FPS.h" />
     <ClInclude Include="GameMain.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="NwaySpawner.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="SceneManager.h" />
