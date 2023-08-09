@@ -29,7 +29,7 @@ public:
 	* 戻り値：なし
 	*描画の更新を実装する
 	*/
-	void Draw()override;
+	void Draw() const override;
 
 	/*
 	* 引数　：damageでダメージを受け取る

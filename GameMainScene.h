@@ -1,14 +1,13 @@
 ﻿#pragma once
 #include "AbstractScene.h"
 #include "Common.h"
+#include "Player.h"
 
 class GameMainScene :public AbstractScene
 {
 private:
-	
-
 	//プレイヤー
-	int player;
+	Player player;
 	int life;//残機
 
 	//敵

@@ -2,7 +2,7 @@
 
 void CharaBase::Update(GameMainScene* gameMain)
 {
-	//CheckCollision();
+	CheckCollision();
 	
 }
 

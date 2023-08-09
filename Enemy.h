@@ -21,7 +21,7 @@ public:
 	* 戻り値：
 	* 
 	*/
-	void Draw() override;
+	void Draw() const override;
 
 	/*
 	* 引数　：

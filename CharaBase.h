@@ -21,7 +21,7 @@ public:
 	* 戻り値：なし
 	* 描画の更新を実装する
 	*/
-	virtual void Draw() {};
+	virtual void Draw() const {};
 
 	/*
 	* 引数　：damageでダメージを受け取る
