@@ -15,7 +15,7 @@
 //プレイヤー
 
 //敵
-#define MAX_ENEMY_NUM 10000
+#define MAX_ENEMY_NUM 50
 
 //弾
-#define MAX_BULLET_NUM 1000000
+#define MAX_BULLET_NUM 10000

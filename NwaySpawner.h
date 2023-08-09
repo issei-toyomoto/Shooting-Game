@@ -1,6 +1,6 @@
 #pragma once
 #include "BulletsSpawner.h"
-#include "GameMain.h"
+#include "GameMainScene.h"
 
 class NwaySpawner :public BulletsSpawner
 {
@@ -9,6 +9,6 @@ private:
 	float baseAngle;//”­Ë‚·‚éÅ‰‚Ì’e‚ÌŒü‚«
 	float angleDiff;//’e“¯m‚ÌŠp“x·
 public:
-	void Shoot(GameMain* GameMain) override;
+	void Shoot(GameMainScene* GameMain) override;
 };
 

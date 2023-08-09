@@ -1,19 +1,20 @@
 #pragma once
 #include "SphereCollider.h"
-#include "GameMain.h"
+#include "GameMainScene.h"
 
 class CharaBase :public SphereCollider 
 {
 private:
 	float speed;
 	int image;
+
 public:
 	/*
 	* 引数　：GameMainのポインタ
 	* 戻り値：なし
 	* 描画以外の更新を実装する
 	*/
-	virtual void Update(GameMain* gameMain);
+	virtual void Update(GameMainScene* gameMain);
 
 	/*
 	* 引数　：なし

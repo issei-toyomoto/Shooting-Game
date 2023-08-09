@@ -143,7 +143,7 @@
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="CharaBase.cpp" />
     <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="GameMain.cpp" />
+    <ClCompile Include="GameMainScene.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="NwaySpawner.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -158,7 +158,7 @@
     <ClInclude Include="Common.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="FPS.h" />
-    <ClInclude Include="GameMain.h" />
+    <ClInclude Include="GameMainScene.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="NwaySpawner.h" />
     <ClInclude Include="Player.h" />

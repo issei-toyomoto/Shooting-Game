@@ -1,5 +1,5 @@
 #pragma once
-#include "GameMain.h"
+#include "GameMainScene.h"
 
 //弾の親クラス
 //弾はこれを継承して作る
@@ -14,5 +14,5 @@ public:
 	//引数　：GameMainのポインタを受け取る
 	//戻り値：なし
 	//SpawnBulletで弾を生成する
-	virtual void Shoot(GameMain* GameMain);
+	virtual void Shoot(GameMainScene* GameMain);
 };

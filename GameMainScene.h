@@ -2,9 +2,11 @@
 #include "AbstractScene.h"
 #include "Common.h"
 
-class GameMain :public AbstractScene
+class GameMainScene :public AbstractScene
 {
 private:
+	
+
 	//プレイヤー
 	int player;
 	int life;//残機
@@ -18,9 +20,9 @@ private:
 
 public:
 	//コンストラクタ
-	GameMain();
+	GameMainScene();
 	//デストラクタ
-	virtual ~GameMain() {};
+	virtual ~GameMainScene() {};
 
 	//描画以外の更新を実装する
 	virtual AbstractScene* Update() override;

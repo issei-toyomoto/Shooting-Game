@@ -1,18 +1,22 @@
 ﻿#pragma once
+#define NO_TOUCH 0 //当たってない
+#define TOUCH    1 //当たった
 
 //円形の当たり判定
 //これを継承して当たり判定を作る
 class SphereCollider 
 {
 private:
-	float location;	//中心座標
-	float radius;	//半径
+	float location_x;	//中心座標X
+	float location_y;	//中心座標Y
+	float radius;		//半径
 public:
 	/*
 	* 引数　：SpherColliderを受け取る
 	* 戻り値：SpherCollider同士の当たり判定を行い当たったかどうかを返す
-	* 　　　　(0:当たってない 1:プレイヤーと敵が当たった　2:プレイヤーと弾が当たった 3:敵と弾が当たった 4:敵と敵が当たった)
+	* 　　　　(0:当たってない 1:当たった)
 	* 円形で当たり判定を行う
+	* 二つの円の中心から距離を測り、その距離が二つの円の半径の和以下ならば当たり、半径の和よりも大きければ当たっていない
 	*/
 	virtual int CheckCollision(SphereCollider collision);
 };

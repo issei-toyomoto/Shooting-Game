@@ -1,7 +1,7 @@
 ﻿#include "DxLib.h"
 #include "SceneManager.h"
 #include "FPS.h"
-#include "GameMain.h"
+#include "GameMainScene.h"
 #include "Common.h"
 //#include "UI.h"
 
@@ -32,7 +32,7 @@ int WINAPI WinMain(_In_ HINSTANCE ih, _In_opt_ HINSTANCE ioh, _In_ LPSTR il, _In
 
 	SetDrawScreen(DX_SCREEN_BACK);	// 描画先画面を裏にする
 
-	SceneManager sceneMng(dynamic_cast<AbstractScene*>(new GameMain()));
+	SceneManager sceneMng(dynamic_cast<AbstractScene*>(new GameMainScene()));
 	FPS fps;
 
 	//ゲームループ
