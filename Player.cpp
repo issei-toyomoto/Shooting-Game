@@ -4,11 +4,12 @@
 
 Player::Player() 
 {
-
+	x = 0;
+	y = 0;
 }
 
 //•`‰æˆÈŠO
-void Player::Update(GameMainScene* gameMain) 
+void Player::Update(/*GameMainScene* gameMain*/) 
 {
 	Input::Update();//“ü—ÍXV
 
@@ -21,9 +22,9 @@ void Player::Update(GameMainScene* gameMain)
 }
 
 //•`‰æ
-void Player::Draw() 
+void Player::Draw() const
 {
-	
+	DrawTriangle(x, y, x + 30, y + 30, x - 30, y - 30, C_GREEN, TRUE);
 }
 
 void Player::Hit(int damage) 

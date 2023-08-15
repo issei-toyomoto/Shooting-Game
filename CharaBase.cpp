@@ -1,8 +1,8 @@
 #include "CharaBase.h"
 
-void CharaBase::Update(GameMainScene* gameMain)
+void CharaBase::Update(/*GameMainScene* gameMain*/)
 {
-	CheckCollision();
+	CheckCollision(sphereCollider);
 	
 }
 

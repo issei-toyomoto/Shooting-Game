@@ -22,7 +22,7 @@ public:
 	* 戻り値：なし
 	* 描画以外の更新を実装する
 	*/
-	void Update(GameMainScene* gameMain)override;
+	void Update(/*GameMainScene* gameMain*/) override;
 
 	/*
 	* 引数　：なし

@@ -7,7 +7,7 @@ class GameMainScene :public AbstractScene
 {
 private:
 	//プレイヤー
-	Player player;
+	int player;
 	int life;//残機
 
 	//敵
