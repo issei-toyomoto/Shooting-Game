@@ -7,8 +7,6 @@
 
 Player::Player() 
 {
-	x = 100;
-	y = 100;
 	vectorX = 0;
 	vectorY = 0;
 }
@@ -21,10 +19,8 @@ void Player::Update(GameMainScene* gameMain)
 
 	//座標更新
 	X();
-	//x += vectorX;
 	location_x += vectorX;
 	Y();
-	//y += vectorY;
 	location_y += vectorY;
 }
 

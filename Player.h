@@ -13,8 +13,6 @@ private:
 	int score;//現在のスコア
 	int weapon;//
 
-	float x;
-	float y;
 	float vectorX;
 	float vectorY;
 
