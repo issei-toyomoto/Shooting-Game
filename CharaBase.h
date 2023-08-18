@@ -12,6 +12,8 @@ class GameMainScene;
 class CharaBase :public SphereCollider
 {
 private:
+	
+protected:
 	SphereCollider sphereCollider;
 	float speed;
 	int image;

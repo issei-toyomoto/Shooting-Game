@@ -13,6 +13,8 @@
 #define C_WHITE GetColor(255,255,255)	//白
 
 //プレイヤー
+#define PLAYER_SPEED 3.0f
+#define PLAYER_RADIUS 20.0f
 
 //敵
 #define MAX_ENEMY_NUM 50

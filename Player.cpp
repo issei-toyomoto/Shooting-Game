@@ -9,6 +9,8 @@ Player::Player()
 {
 	vectorX = 0;
 	vectorY = 0;
+	speed = PLAYER_SPEED;
+	radius = PLAYER_RADIUS;
 }
 
 //描画以外
@@ -27,15 +29,15 @@ void Player::Update(GameMainScene* gameMain)
 //描画
 void Player::Draw() const
 {
-	DrawCircle(location_x, location_y, 20, C_WHITE, TRUE);
+	DrawCircle((int)location_x, (int)location_y, (int)radius, C_WHITE, TRUE);
 
 #ifdef DEBUG
 	int sx, sy;
 	sx = Input::GetJoyStickX();
 	sy = Input::GetJoyStickY();
 	DrawFormatString(50, 0,   C_RED,   "Player");
-	DrawFormatString(50, 20,  C_WHITE, "StX %d",sx);
-	DrawFormatString(50, 40,  C_WHITE, "StY %d",sy);
+	DrawFormatString(50, 20,  C_WHITE, "StX %d", sx);
+	DrawFormatString(50, 40,  C_WHITE, "StY %d", sy);
 	DrawFormatString(50, 60,  C_WHITE, "X   %f", location_x);
 	DrawFormatString(50, 80,  C_WHITE, "Y   %f", location_y);
 	DrawFormatString(50, 100, C_WHITE, "VX  %f", vectorX);
@@ -43,7 +45,7 @@ void Player::Draw() const
 #endif // DEBUG
 
 #ifdef DEBUG_COLLISON_SIRCLE
-	DrawCircle(location_x, location_y, 20,C_RED, FALSE);
+	DrawCircle((int)location_x, (int)location_y, (int)radius,C_RED, FALSE);
 #endif // DEBUG_COLLISON_SIRCLE
 
 }
@@ -56,10 +58,10 @@ void Player::Hit(int damage)
 void Player::X() 
 {
 	if (Input::GetJoyStickX() < 0) {//左
-		vectorX = -1;
+		vectorX = -speed;
 	}
 	else if (Input::GetJoyStickX() > 0) {//右
-		vectorX = 1;
+		vectorX = speed;
 	}
 	else if (Input::GetJoyStickX() == 0) {//X軸静止
 		vectorX = 0;
@@ -69,10 +71,10 @@ void Player::X()
 void Player::Y() 
 {
 	if (Input::GetJoyStickY() < 0) {//上
-		vectorY = -1;
+		vectorY = -speed;
 	}
 	else if (Input::GetJoyStickY() > 0) {//下
-		vectorY = 1;
+		vectorY = speed;
 	}
 	else if (Input::GetJoyStickY() == 0) {//Y軸静止
 		vectorY = 0;
