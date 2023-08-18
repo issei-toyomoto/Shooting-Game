@@ -1,5 +1,4 @@
 ﻿#include "SphereCollider.h"
-#include "Common.h"
 #include <math.h>
 
 int SphereCollider::CheckCollision(SphereCollider sphereCollider)

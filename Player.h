@@ -1,11 +1,12 @@
-#pragma once
+ï»¿#pragma once
 #include "CharaBase.h"
 #include "GameMainScene.h"
+class GameMainScene;
 
 class Player :public CharaBase
 {
 private:
-	int score;//Œ»İ‚ÌƒXƒRƒA
+	int score;//ç¾åœ¨ã®ã‚¹ã‚³ã‚¢
 	int weapon;//
 
 	float x;
@@ -14,41 +15,41 @@ private:
 	float vectorY;
 
 public:
-	//ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	//ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	Player();
 
 	/*
-	* ˆø”@FGameMain‚Ìƒ|ƒCƒ“ƒ^‚ğó‚¯æ‚é
-	* –ß‚è’lF‚È‚µ
-	* •`‰æˆÈŠO‚ÌXV‚ğÀ‘•‚·‚é
+	* å¼•æ•°ã€€ï¼šGameMainã®ãƒã‚¤ãƒ³ã‚¿ã‚’å—ã‘å–ã‚‹
+	* æˆ»ã‚Šå€¤ï¼šãªã—
+	* æç”»ä»¥å¤–ã®æ›´æ–°ã‚’å®Ÿè£…ã™ã‚‹
 	*/
-	void Update(/*GameMainScene* gameMain*/) override;
+	void Update(GameMainScene* gameMain) override;
 
 	/*
-	* ˆø”@F‚È‚µ
-	* –ß‚è’lF‚È‚µ
-	*•`‰æ‚ÌXV‚ğÀ‘•‚·‚é
+	* å¼•æ•°ã€€ï¼šãªã—
+	* æˆ»ã‚Šå€¤ï¼šãªã—
+	*æç”»ã®æ›´æ–°ã‚’å®Ÿè£…ã™ã‚‹
 	*/
 	void Draw() const override;
 
 	/*
-	* ˆø”@Fdamage‚Åƒ_ƒ[ƒW‚ğó‚¯æ‚é
-	* –ß‚è’lF‚È‚µ
-	* ƒ_ƒ[ƒW‚ğó‚¯‚½‚Æ‚«‚Ìˆ—
+	* å¼•æ•°ã€€ï¼šdamageã§ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’å—ã‘å–ã‚‹
+	* æˆ»ã‚Šå€¤ï¼šãªã—
+	* ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’å—ã‘ãŸã¨ãã®å‡¦ç†
 	*/
 	void Hit(int damage)override;
 
 	/*
-	* ˆø”@F‚È‚µ
-	* –ß‚è’lF‚È‚µ
-	* X²‚Ìˆ—
+	* å¼•æ•°ã€€ï¼šãªã—
+	* æˆ»ã‚Šå€¤ï¼šãªã—
+	* Xè»¸ã®å‡¦ç†
 	*/
 	void X();
 
 	/*
-	* ˆø”@F‚È‚µ
-	* –ß‚è’lF‚È‚µ
-	* Y²‚Ìˆ—
+	* å¼•æ•°ã€€ï¼šãªã—
+	* æˆ»ã‚Šå€¤ï¼šãªã—
+	* Yè»¸ã®å‡¦ç†
 	*/
 	void Y();
 };

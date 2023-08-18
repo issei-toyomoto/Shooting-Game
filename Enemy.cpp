@@ -1,6 +1,6 @@
-#include "Enemy.h"
+﻿#include "Enemy.h"
 
-void Enemy::Update(/*GameMainScene* gameMain*/)
+void Enemy::Update(GameMainScene* gameMain)
 {
 
 }

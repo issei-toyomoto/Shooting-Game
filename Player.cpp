@@ -1,4 +1,4 @@
-#include "Player.h"
+ï»¿#include "Player.h"
 #include "Common.h"
 #include "Input.h"
 
@@ -8,20 +8,20 @@ Player::Player()
 	y = 0;
 }
 
-//•`‰æˆÈŠO
-void Player::Update(/*GameMainScene* gameMain*/) 
+//æç”»ä»¥å¤–
+void Player::Update(GameMainScene* gameMain) 
 {
-	Input::Update();//“ü—ÍXV
+	Input::Update();//å…¥åŠ›æ›´æ–°
 
 
-	//À•WXV
+	//åº§æ¨™æ›´æ–°
 	X();
 	x += vectorX;
 	Y();
 	y += vectorY;
 }
 
-//•`‰æ
+//æç”»
 void Player::Draw() const
 {
 	DrawTriangle(x, y, x + 30, y + 30, x - 30, y - 30, C_GREEN, TRUE);
@@ -34,26 +34,26 @@ void Player::Hit(int damage)
 
 void Player::X() 
 {
-	if (Input::GetJoyStickX() < 0) {//‰E
+	if (Input::GetJoyStickX() < 0) {//å³
 		vectorX = 1;
 	}
-	else if (Input::GetJoyStickX() > 0) {//¶
+	else if (Input::GetJoyStickX() > 0) {//å·¦
 		vectorX = -1;
 	}
-	else if (Input::GetJoyStickX == 0) {//X²Ã~
+	else if (Input::GetJoyStickX == 0) {//Xè»¸é™æ­¢
 		vectorX = 0;
 	}
 }
 
 void Player::Y() 
 {
-	if (Input::GetJoyStickY() < 0) {//ã
+	if (Input::GetJoyStickY() < 0) {//ä¸Š
 		vectorY = -1;
 	}
-	else if (Input::GetJoyStickY() > 0) {//‰º
+	else if (Input::GetJoyStickY() > 0) {//ä¸‹
 		vectorY = 1;
 	}
-	else if (Input::GetJoyStickY() == 0) {//Y²Ã~
+	else if (Input::GetJoyStickY() == 0) {//Yè»¸é™æ­¢
 		vectorY = 0;
 	}
 }

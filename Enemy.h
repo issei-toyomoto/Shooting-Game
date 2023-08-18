@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "CharaBase.h"
 #include "GameMainScene.h"
 
@@ -10,22 +10,22 @@ private:
 	
 public:
 	/*
-	* ˆø”@FGameMain‚Ìƒ|ƒCƒ“ƒ^‚ğó‚¯æ‚é
-	* –ß‚è’lF‚È‚µ
-	* •`‰æˆÈŠO‚ÌXV‚ğÀ‘•‚·‚é
+	* å¼•æ•°ã€€ï¼šGameMainã®ãƒã‚¤ãƒ³ã‚¿ã‚’å—ã‘å–ã‚‹
+	* æˆ»ã‚Šå€¤ï¼šãªã—
+	* æç”»ä»¥å¤–ã®æ›´æ–°ã‚’å®Ÿè£…ã™ã‚‹
 	*/
-	void Update(/*GameMainScene* gameMain*/) override;
+	void Update(GameMainScene* gameMain) override;
 
 	/*
-	* ˆø”@F
-	* –ß‚è’lF
+	* å¼•æ•°ã€€ï¼š
+	* æˆ»ã‚Šå€¤ï¼š
 	* 
 	*/
 	void Draw() const override;
 
 	/*
-	* ˆø”@F
-	* –ß‚è’lF
+	* å¼•æ•°ã€€ï¼š
+	* æˆ»ã‚Šå€¤ï¼š
 	* 
 	*/
 	void Hit(int damage) override;

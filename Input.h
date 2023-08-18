@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "DxLib.h"
 
 class Input
@@ -20,7 +20,7 @@ public:
 	static int y_old;
 
 public:
-	//�R���X�g���N�^
+	//コンストラクタ
 	Input () 
 	{
 
@@ -28,30 +28,30 @@ public:
 
 	static void Update();
 	/*
-	* �����@�Fint�^
-	* �߂�l�Fint�^
-	* �����Ă���ԁA�߂�l��Ԃ�
+	* 引数　：int型
+	* 戻り値：int型
+	* 押している間、戻り値を返す
 	*/
 	static int Getkey(int key);
 	/*
-	* �����@�Fint�^
-	* �߂�l�Fint�^
-	* �������u�ԁA�߂�l��Ԃ�
+	* 引数　：int型
+	* 戻り値：int型
+	* 押した瞬間、戻り値を返す
 	*/
 	static int GetKeyDown(int key);
 
 	/*
-	* �����@�F�Ȃ�
-	* �߂�l�Fint�^
-	* �W���C�X�e�B�b�NX�������ɓ|���Ă���ԁA�|���Ă�������̖߂�l��Ԃ�
-	* ��F�E���i1�`1000�j�@�����i-1�`-1000�j
+	* 引数　：なし
+	* 戻り値：int型
+	* ジョイスティックX軸方向に倒している間、倒している方向の戻り値を返す
+	* 例：右→（1～1000）　左→（-1～-1000）
 	*/
 	static int GetJoyStickX();
 	/*
-	* �����@�F�Ȃ�
-	* �߂�l�Fint�^
-	* �W���C�X�e�B�b�NY�������ɓ|���Ă���ԁA�|���Ă�������̖߂�l��Ԃ�
-	* ��F�����i1�`1000�j�@�と�i-1�`-1000�j
+	* 引数　：なし
+	* 戻り値：int型
+	* ジョイスティックY軸方向に倒している間、倒している方向の戻り値を返す
+	* 例：下→（1～1000）　上→（-1～-1000）
 	*/
 	static int GetJoyStickY();
 };

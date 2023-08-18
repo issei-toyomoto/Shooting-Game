@@ -1,8 +1,15 @@
-#pragma once
-#include "GameMainScene.h"
+ï»¿#pragma once
+/*********************************************************************/
+//ç¶™æ‰¿ã‚¯ãƒ©ã‚¹â†’ç¶™æ‰¿å…ƒ(SphereCollider.h)
+//è¦ªã‚¯ãƒ©ã‚¹â†’ç¶™æ‰¿å…ˆ(Player.h Enemy.h)
+// 
+//è¦ªã‚¯ãƒ©ã‚¹ã®SphereColliderã‹ã‚‰å½“ãŸã‚Šåˆ¤å®šã‚’ç¶™æ‰¿ã•ã‚Œã€
+//ç¶™æ‰¿å…ˆã®ã‚¯ãƒ©ã‚¹ã«ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’å—ã‘ãŸæ™‚ã®å‡¦ç†ã‚’ã“ã®ã‚¯ãƒ©ã‚¹ã§æ›¸ã
+/*********************************************************************/
 #include "SphereCollider.h"
+class GameMainScene;
 
-class CharaBase :public SphereCollider 
+class CharaBase :public SphereCollider
 {
 private:
 	SphereCollider sphereCollider;
@@ -10,24 +17,26 @@ private:
 	int image;
 
 public:
-	/*
-	* ˆø”@FGameMain‚Ìƒ|ƒCƒ“ƒ^
-	* –ß‚è’lF‚È‚µ
-	* •`‰æˆÈŠO‚ÌXV‚ğÀ‘•‚·‚é
-	*/
-	virtual void Update(/*GameMainScene* gameMain*/);
+	CharaBase();
 
 	/*
-	* ˆø”@F‚È‚µ
-	* –ß‚è’lF‚È‚µ
-	* •`‰æ‚ÌXV‚ğÀ‘•‚·‚é
+	* å¼•æ•°ã€€ï¼šGameMainã®ãƒã‚¤ãƒ³ã‚¿
+	* æˆ»ã‚Šå€¤ï¼šãªã—
+	* æç”»ä»¥å¤–ã®æ›´æ–°ã‚’å®Ÿè£…ã™ã‚‹
 	*/
-	virtual void Draw() const {};
+	virtual void Update(GameMainScene* gameMain);
 
 	/*
-	* ˆø”@Fdamage‚Åƒ_ƒ[ƒW‚ğó‚¯æ‚é
-	* –ß‚è’lF‚È‚µ
-	* ƒ_ƒ[ƒW‚ğó‚¯‚½‚Æ‚«‚Ìˆ—
+	* å¼•æ•°ã€€ï¼šãªã—
+	* æˆ»ã‚Šå€¤ï¼šãªã—
+	* æç”»ã®æ›´æ–°ã‚’å®Ÿè£…ã™ã‚‹
+	*/
+	virtual void Draw() const;
+
+	/*
+	* å¼•æ•°ã€€ï¼šdamageã§ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’å—ã‘å–ã‚‹
+	* æˆ»ã‚Šå€¤ï¼šãªã—
+	* ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’å—ã‘ãŸã¨ãã®å‡¦ç†
 	*/
 	virtual void Hit(int damage);
 };

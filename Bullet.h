@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "SphereCollider.h"
 
 class Bullet :public SphereCollider
@@ -11,23 +11,23 @@ private:
 	float angulVelocity;
 public:
 	/*
-	* ˆø”@F‚È‚µ
-	* –ß‚è’lF‚È‚µ
-	* •`‰æˆÈŠO‚ÌXV‚ðŽÀ‘•‚·‚é
+	* å¼•æ•°ã€€ï¼šãªã—
+	* æˆ»ã‚Šå€¤ï¼šãªã—
+	* æç”»ä»¥å¤–ã®æ›´æ–°ã‚’å®Ÿè£…ã™ã‚‹
 	*/
 	void Update();
 
 	/*
-	* ˆø”@F‚È‚µ
-	* –ß‚è’lF‚È‚µ
-	* •`‰æ‚ÌXV‚ðŽÀ‘•‚·‚é
+	* å¼•æ•°ã€€ï¼šãªã—
+	* æˆ»ã‚Šå€¤ï¼šãªã—
+	* æç”»ã®æ›´æ–°ã‚’å®Ÿè£…ã™ã‚‹
 	*/
 	void Draw();
 
 	/*
-	* ˆø”@F‚È‚µ
-	* –ß‚è’lF‚È‚µ
-	* ƒ_ƒ[ƒW‚ð—^‚¦‚é
+	* å¼•æ•°ã€€ï¼šãªã—
+	* æˆ»ã‚Šå€¤ï¼šãªã—
+	* ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸Žãˆã‚‹
 	*/
 	void GetDamage();
 };

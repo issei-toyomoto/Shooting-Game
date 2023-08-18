@@ -1,6 +1,8 @@
 ﻿#pragma once
 #include "AbstractScene.h"
 #include "Common.h"
+#include "CharaBase.h"
+class CharaBase;
 #include "Player.h"
 
 class GameMainScene :public AbstractScene

@@ -1,4 +1,4 @@
-#include "Input.h"
+ï»¿#include "Input.h"
 
 int Input::key_flg;
 int Input::now_key;
@@ -32,7 +32,7 @@ void Input::Update()
 	y_flg = y_now & ~y_old;
 }
 
-//ƒ{ƒ^ƒ““ü—Í
+//ãƒœã‚¿ãƒ³å…¥åŠ›
 int Input::Getkey(int key) 
 {
 	if (now_key & key) {
@@ -49,12 +49,12 @@ int Input::GetKeyDown(int key)
 	return FALSE;
 }
 
-//ƒWƒ‡ƒCƒXƒeƒBƒbƒNX²
+//ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯Xè»¸
 int Input::GetJoyStickX() 
 {
 	return x_buf;
 }
-//ƒWƒ‡ƒCƒXƒeƒBƒbƒNY²
+//ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯Yè»¸
 int Input::GetJoyStickY() 
 {
 	return y_buf;

@@ -1,8 +1,8 @@
-#pragma once
+ï»¿#pragma once
 #include "GameMainScene.h"
 
-//’e‚ÌeƒNƒ‰ƒX
-//’e‚Í‚±‚ê‚ğŒp³‚µ‚Äì‚é
+//å¼¾ã®è¦ªã‚¯ãƒ©ã‚¹
+//å¼¾ã¯ã“ã‚Œã‚’ç¶™æ‰¿ã—ã¦ä½œã‚‹
 class BulletsSpawner 
 {
 private:
@@ -11,8 +11,8 @@ private:
 	float acceleration;
 	float angulVelocity;
 public:
-	//ˆø”@FGameMain‚Ìƒ|ƒCƒ“ƒ^‚ğó‚¯æ‚é
-	//–ß‚è’lF‚È‚µ
-	//SpawnBullet‚Å’e‚ğ¶¬‚·‚é
+	//å¼•æ•°ã€€ï¼šGameMainã®ãƒã‚¤ãƒ³ã‚¿ã‚’å—ã‘å–ã‚‹
+	//æˆ»ã‚Šå€¤ï¼šãªã—
+	//SpawnBulletã§å¼¾ã‚’ç”Ÿæˆã™ã‚‹
 	virtual void Shoot(GameMainScene* GameMain);
 };
