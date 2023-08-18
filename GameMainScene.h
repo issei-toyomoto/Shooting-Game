@@ -4,17 +4,18 @@
 #include "CharaBase.h"
 class CharaBase;
 #include "Player.h"
+#include "Enemy.h"
 
 class GameMainScene :public AbstractScene
 {
 private:
+	
 	//プレイヤー
-	int player;
+	Player player;
 	int life;//残機
 
 	//敵
-	int* pEnemy[MAX_ENEMY_NUM];
-	
+	Enemy* enemy = new Enemy[MAX_ENEMY_NUM];
 
 	//弾
 	int* pBullets[MAX_BULLET_NUM];
@@ -23,7 +24,7 @@ public:
 	//コンストラクタ
 	GameMainScene();
 	//デストラクタ
-	virtual ~GameMainScene() {};
+	virtual ~GameMainScene();
 
 	//描画以外の更新を実装する
 	virtual AbstractScene* Update() override;

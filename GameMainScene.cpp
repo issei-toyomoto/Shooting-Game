@@ -6,17 +6,25 @@ GameMainScene::GameMainScene()
 	
 }
 
+//デストラクタ
+GameMainScene::~GameMainScene() 
+{
+	delete[]enemy;
+	
+}
+
 //描画以外
 AbstractScene* GameMainScene::Update()
 {
-	//player.Update();
+	GameMainScene GMS;
+	player.Update(&GMS);
 	return this;
 }
 
 //描画
 void GameMainScene::Draw() const
 {
-	//player.Draw();
+	player.Draw();
 }
 
 //当たり判定のチェック処理

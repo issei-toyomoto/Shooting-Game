@@ -1,4 +1,11 @@
 ﻿#pragma once
+/*********************************************************************/
+//親クラス→なし
+//継承クラス→(CharaBase.h Bullet.h)
+// 
+//円形でプレイヤー、敵、弾の当たり判定を取り継承先に当たったかどうか
+//を返す
+/*********************************************************************/
 #define NO_TOUCH 0 //当たってない
 #define TOUCH    1 //当たった
 
@@ -7,9 +14,12 @@
 class SphereCollider 
 {
 private:
+
+protected:
 	float location_x;	//中心座標X
 	float location_y;	//中心座標Y
 	float radius;		//半径
+	
 public:
 
 	/*
