@@ -14,10 +14,13 @@
 
 //プレイヤー
 #define PLAYER_SPEED 3.0f
-#define PLAYER_RADIUS 20.0f
+#define PLAYER_RADIUS 15.0f
+#define PLAYER_BULLET_SPAWN_WAY 3
 
 //敵
 #define MAX_ENEMY_NUM 50
 
 //弾
-#define MAX_BULLET_NUM 10000
+#define MAX_BULLET_NUM 1000000
+#define BULLET_SPPED (PLAYER_SPEED + 3.0f)
+#define BULLET_RADIUS 5.0f

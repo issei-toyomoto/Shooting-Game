@@ -16,6 +16,8 @@ private:
 	float vectorX;
 	float vectorY;
 
+	int bBtnCnt;
+	int tmp;
 public:
 	//コンストラクタ
 	Player();
@@ -54,4 +56,18 @@ public:
 	* Y軸の処理
 	*/
 	void Y();
+
+	/*
+	* 引数　：なし
+	* 戻り値：float型のPlayerのX座標を返す
+	* float型のPlayerのX座標を返す
+	*/
+	float GetX();
+
+	/*
+	* 引数　：なし
+	* 戻り値：float型のPlayerのY座標を返す
+	* float型のPlayerのY座標を返す
+	*/
+	float GetY();
 };

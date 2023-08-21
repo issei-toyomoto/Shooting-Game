@@ -5,11 +5,11 @@
 class CharaBase;
 #include "Player.h"
 #include "Enemy.h"
+#include "Bullet.h"
 
 class GameMainScene :public AbstractScene
 {
 private:
-	
 	//プレイヤー
 	Player player;
 	int life;//残機
@@ -18,7 +18,9 @@ private:
 	Enemy* enemy = new Enemy[MAX_ENEMY_NUM];
 
 	//弾
-	int* pBullets[MAX_BULLET_NUM];
+	Bullet* bullets = new Bullet[MAX_BULLET_NUM];
+
+protected:
 
 public:
 	//コンストラクタ
@@ -44,6 +46,8 @@ public:
 	* 戻り値：なし
 	* 弾の配列に新しくデータを作成する
 	*/
-	void SpawnBullet();
+	void SpawnBullet(int x,int y);
+
+	int GetLife();
 };
 

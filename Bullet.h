@@ -12,12 +12,22 @@
 class Bullet :public SphereCollider
 {
 private:
+	bool shootFlg;//発射しているか？
+	float x;
+	float y;
+
 	int damage;
 	float speed;
 	float angle;
 	float acceleration;
 	float angulVelocity;
+
+protected:
+
 public:
+	//コンストラクタ
+	Bullet();
+
 	/*
 	* 引数　：なし
 	* 戻り値：なし
@@ -30,7 +40,7 @@ public:
 	* 戻り値：なし
 	* 描画の更新を実装する
 	*/
-	void Draw();
+	void Draw() const;
 
 	/*
 	* 引数　：なし
@@ -38,5 +48,23 @@ public:
 	* ダメージを与える
 	*/
 	void GetDamage();
+
+	/*
+	* 引数　：
+	* 戻り値：
+	* X軸の処理
+	*/
+	void X();
+
+	/*
+	* 引数　：
+	* 戻り値：
+	* Y軸の処理
+	*/
+	void Y();
+
+	void SetX(int setX);
+	void SetY(int setY);
+	void SetShootFlg(bool flg);
 };
 
