@@ -16,8 +16,7 @@ GameMainScene::~GameMainScene()
 //描画以外
 AbstractScene* GameMainScene::Update()
 {
-	GameMainScene GMS;
-	player.Update(&GMS);
+	player.Update(this);
 	return this;
 }
 
