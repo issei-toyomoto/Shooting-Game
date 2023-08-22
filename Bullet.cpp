@@ -6,20 +6,35 @@
 
 Bullet::Bullet() 
 {
+	shootFlg = false;
+	x = 0;
+	y = 0;
 
+	damage = 0;
+	speed = 0;
+	angle = 0;
+	acceleration = 0;
+	angulVelocity = 0;
 }
 
 void Bullet::Update()
 {
-	if (shootFlg == true) {
-		Y();
-		y -= speed;
+	//当たり判定
+	location_x = x;
+	location_y = y;
+
+	//座標処理
+	Y();
+	y -= speed;
+
+	if (y <= 0) {
+		shootFlg = false;
 	}
 }
 
 void Bullet::Draw() const 
 {
-	DrawCircle(x, y, BULLET_RADIUS, C_RED, TRUE);
+	DrawCircle((int)x, (int)y, (int)BULLET_RADIUS, C_RED, TRUE);
 
 #ifdef DEBUG
 	
@@ -40,19 +55,4 @@ void Bullet::X()
 void Bullet::Y()
 {
 	speed = BULLET_SPPED;
-}
-
-void Bullet::SetX(int setX)
-{
-	x = setX;
-}
-
-void Bullet::SetY(int setY) 
-{
-	y = setY;
-}
-
-void Bullet::SetShootFlg(bool flg)
-{
-	shootFlg = flg;
 }

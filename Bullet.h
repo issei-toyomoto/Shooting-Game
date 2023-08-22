@@ -12,7 +12,11 @@
 class Bullet :public SphereCollider
 {
 private:
-	bool shootFlg;//発射しているか？
+
+protected:
+	
+public:
+	bool shootFlg;//発射中かどうか？
 	float x;
 	float y;
 
@@ -22,9 +26,6 @@ private:
 	float acceleration;
 	float angulVelocity;
 
-protected:
-
-public:
 	//コンストラクタ
 	Bullet();
 
@@ -62,9 +63,5 @@ public:
 	* Y軸の処理
 	*/
 	void Y();
-
-	void SetX(int setX);
-	void SetY(int setY);
-	void SetShootFlg(bool flg);
 };
 

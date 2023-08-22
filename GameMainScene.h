@@ -10,6 +10,7 @@ class CharaBase;
 class GameMainScene :public AbstractScene
 {
 private:
+	int bulletsNum = 0;
 	//プレイヤー
 	Player player;
 	int life;//残機
@@ -42,11 +43,11 @@ public:
 	void HitCheck();
 
 	/*
-	* 引数　：なし
+	* 引数　：int型X軸　int型Y軸　int型敵かプレイヤーか（０：敵　１：プレイヤー）
 	* 戻り値：なし
 	* 弾の配列に新しくデータを作成する
 	*/
-	void SpawnBullet(int x,int y);
+	void SpawnBullet(float location_x, float location_y, int chara);
 
 	int GetLife();
 };

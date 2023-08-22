@@ -10,8 +10,8 @@
 class Enemy :public CharaBase
 {
 private:
-	int hp;
-	int point;
+	int hp;//敵の体力
+	int point;//倒した時のポイント
 	
 public:
 	/*

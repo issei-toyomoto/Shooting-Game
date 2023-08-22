@@ -8,6 +8,9 @@
 
 Player::Player() 
 {
+	location_x = 650;
+	location_y = 650;
+
 	tmp = 0;
 	vectorX = 0;
 	vectorY = 0;
@@ -23,10 +26,14 @@ void Player::Update(GameMainScene* gameMain)
 	if (Input::Getkey(PAD_INPUT_B) == TRUE) {
 		
 		if (bBtnCnt % 6 == 0) {//６フレームごとに発射する
-			gameMain->SpawnBullet(location_x, location_y);
+			gameMain->SpawnBullet(location_x, location_y, PLAYER);
 			tmp++;
 		}
 		bBtnCnt++;
+	}
+	else {
+		tmp = 0;
+		bBtnCnt = 0;
 	}
 
 	//座標更新
@@ -95,12 +102,12 @@ void Player::Y()
 
 float Player::GetX()
 {
-	int X = location_x;
+	float X = location_x;
 	return X;
 }
 
 float Player::GetY()
 {
-	int Y = location_y;
+	float Y = location_y;
 	return Y;
 }

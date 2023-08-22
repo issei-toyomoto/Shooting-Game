@@ -4,7 +4,7 @@
 //コンストラクタ
 GameMainScene::GameMainScene()
 {
-	
+	//bullets = nullptr;
 }
 
 //デストラクタ
@@ -19,8 +19,10 @@ GameMainScene::~GameMainScene()
 AbstractScene* GameMainScene::Update()
 {
 	player.Update(this);
-	bullets->Update();
-	
+	for (int i = 0; i < ONEWAY_BULLET_NUM; i++) {
+		bullets[i].Update();
+	}
+
 	return this;
 }
 
@@ -28,8 +30,10 @@ AbstractScene* GameMainScene::Update()
 void GameMainScene::Draw() const
 {
 	player.Draw();
-	bullets->Draw();
-	
+	for (int i = 0; i < ONEWAY_BULLET_NUM; i++) {
+		bullets[i].Draw();
+	}
+	DrawFormatString(500, 500, C_RED, "bulletsNum %d", bulletsNum);
 }
 
 //当たり判定のチェック処理
@@ -39,11 +43,27 @@ void GameMainScene::HitCheck()
 }
 
 //弾の配列に新しくデータを作る
-void GameMainScene::SpawnBullet(int x, int y)
+void GameMainScene::SpawnBullet(float location_x, float location_y, int chara)
 {
-	bullets->SetShootFlg(true);
-	bullets->SetX(x);
-	bullets->SetY(y);
+	for (int i = 0; i < ONEWAY_BULLET_NUM; i++) {
+		if (bullets[i].shootFlg == false) {
+			if (chara == PLAYER) {
+				location_x = player.GetX();
+				location_y = player.GetY() - 25;
+
+				bullets[i].speed = BULLET_SPPED;
+				bullets[i].x = location_x;
+				bullets[i].y = location_y;
+				bullets[i].shootFlg = true;
+				bulletsNum++;
+				break;
+			}
+			else if (chara == ENEMY) {
+
+				break;
+			}
+		}
+	}
 }
 
 int GameMainScene::GetLife() 

@@ -16,9 +16,9 @@ class SphereCollider
 private:
 
 protected:
-	float location_x;	//中心座標X
-	float location_y;	//中心座標Y
-	float radius;		//半径
+	float location_x = 0;	//中心座標X
+	float location_y = 0;	//中心座標Y
+	float radius = 0;		//半径
 	
 public:
 
