@@ -9,9 +9,7 @@ CharaBase::CharaBase()
 
 void CharaBase::Update(GameMainScene* gameMain)
 {
-	if (CheckCollision(sphereCollider) == 1) {
-		Hit(10);
-	}
+	
 }
 
 void CharaBase::Draw() const 
@@ -21,5 +19,7 @@ void CharaBase::Draw() const
 
 void CharaBase::Hit(int damage) 
 {
-	
+	if (CheckCollision(sphereCollider) == 1) {
+
+	}
 }

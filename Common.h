@@ -21,6 +21,8 @@
 //敵
 #define ENEMY 0
 #define MAX_ENEMY_NUM 50
+#define ENEMY_SPEED 2.0f
+#define ENEMY_RADIUS 15.0f
 
 //弾
 #define MAX_BULLET_NUM 1000000

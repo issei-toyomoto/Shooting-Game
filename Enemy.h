@@ -12,8 +12,15 @@ class Enemy :public CharaBase
 private:
 	int hp;//敵の体力
 	int point;//倒した時のポイント
+
+	float vectorX;
+	float vectorY;
 	
 public:
+
+	//コンストラクタ
+	Enemy();
+
 	/*
 	* 引数　：GameMainのポインタを受け取る
 	* 戻り値：なし
@@ -34,5 +41,8 @@ public:
 	* 
 	*/
 	void Hit(int damage) override;
+
+	void X();
+	void Y();
 };
 

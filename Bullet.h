@@ -12,6 +12,7 @@
 class Bullet :public SphereCollider
 {
 private:
+	SphereCollider sphereCollider;
 
 protected:
 	

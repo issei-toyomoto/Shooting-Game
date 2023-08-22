@@ -1,6 +1,8 @@
 ﻿#include "GameMainScene.h"
 #include "NwaySpawner.h"
 
+#define DEBUG
+
 //コンストラクタ
 GameMainScene::GameMainScene()
 {
@@ -19,6 +21,7 @@ GameMainScene::~GameMainScene()
 AbstractScene* GameMainScene::Update()
 {
 	player.Update(this);
+	enemy[0].Update(this);
 	for (int i = 0; i < ONEWAY_BULLET_NUM; i++) {
 		bullets[i].Update();
 	}
@@ -30,16 +33,21 @@ AbstractScene* GameMainScene::Update()
 void GameMainScene::Draw() const
 {
 	player.Draw();
+	enemy[0].Draw();
 	for (int i = 0; i < ONEWAY_BULLET_NUM; i++) {
 		bullets[i].Draw();
 	}
+
+#ifdef DEBUG
 	DrawFormatString(500, 500, C_RED, "bulletsNum %d", bulletsNum);
+#endif // DEBUG
+
 }
 
 //当たり判定のチェック処理
 void GameMainScene::HitCheck()
 {
-
+	
 }
 
 //弾の配列に新しくデータを作る

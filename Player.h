@@ -17,7 +17,7 @@ private:
 	float vectorY;
 
 	int bBtnCnt;
-	int tmp;
+	int bullets;
 public:
 	//コンストラクタ
 	Player();

@@ -27,6 +27,10 @@ void Bullet::Update()
 	Y();
 	y -= speed;
 
+	if (CheckCollision(sphereCollider) == 1) {
+		shootFlg = false;
+	}
+
 	if (y <= 0) {
 		shootFlg = false;
 	}
@@ -34,7 +38,9 @@ void Bullet::Update()
 
 void Bullet::Draw() const 
 {
-	DrawCircle((int)x, (int)y, (int)BULLET_RADIUS, C_RED, TRUE);
+	if (shootFlg == true) {
+		DrawCircle((int)x, (int)y, (int)BULLET_RADIUS, C_RED, TRUE);
+	}
 
 #ifdef DEBUG
 	

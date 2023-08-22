@@ -11,7 +11,7 @@ Player::Player()
 	location_x = 650;
 	location_y = 650;
 
-	tmp = 0;
+	bullets = 0;
 	vectorX = 0;
 	vectorY = 0;
 	speed = PLAYER_SPEED;
@@ -27,12 +27,12 @@ void Player::Update(GameMainScene* gameMain)
 		
 		if (bBtnCnt % 6 == 0) {//６フレームごとに発射する
 			gameMain->SpawnBullet(location_x, location_y, PLAYER);
-			tmp++;
+			bullets++;
 		}
 		bBtnCnt++;
 	}
 	else {
-		tmp = 0;
+		bullets = 0;
 		bBtnCnt = 0;
 	}
 
@@ -59,8 +59,8 @@ void Player::Draw() const
 	DrawFormatString(50, 80,  C_WHITE, "Y   %f", location_y);
 	DrawFormatString(50, 100, C_WHITE, "VX  %f", vectorX);
 	DrawFormatString(50, 120, C_WHITE, "VY  %f", vectorY);
-	DrawFormatString(50, 140, C_WHITE, "tmp   %d", tmp);
-	DrawFormatString(50, 160, C_WHITE, "BCnt  %d", bBtnCnt);
+	DrawFormatString(50, 140, C_WHITE, "bullets %d", bullets);
+	DrawFormatString(50, 160, C_WHITE, "BCnt    %d", bBtnCnt);
 #endif // DEBUG
 
 #ifdef DEBUG_COLLISON_SIRCLE
