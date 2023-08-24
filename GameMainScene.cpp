@@ -52,13 +52,25 @@ void GameMainScene::Draw() const
 //当たり判定のチェック処理
 void GameMainScene::HitCheck()
 {
+	//弾と敵の当たり判定
 	for (int i = 0; i < MAX_BULLET_NUM; i++) {
 		for (int j = 0; j < MAX_ENEMY_NUM; j++) {
-			/*if (bullets[i].CheckCollision() == 1) {
-				Hit++;
-			}*/
+			if (bullets[i].CheckCollision(enemy[j]) == 1) {
+				bullets[i].shootFlg = false;
+				enemy[j].hp--;
+			}
 		}
 	}
+
+	//弾と弾の当たり判定
+	/*for (int i = 0; i < MAX_BULLET_NUM; i++) {
+		for (int j = 1; j < MAX_BULLET_NUM; j++) {
+			if (bullets[i].CheckCollision(bullets[j]) == 1) {
+				bullets[i].shootFlg = false;
+				bullets[j].shootFlg = false;
+			}
+		}
+	}*/
 }
 
 //弾の配列に新しくデータを作る

@@ -16,7 +16,7 @@ void Enemy::Update(GameMainScene* gameMain)
 {
 	shootCnt++;
 
-	if (shootCnt % 30 == 0) {
+	if (shootCnt % 30 == 0 && hp >= 0) {
 		gameMain->SpawnBullet(location_x, location_y, ENEMY);
 	}
 
@@ -30,7 +30,9 @@ void Enemy::Update(GameMainScene* gameMain)
 
 void Enemy::Draw() const
 {
-	DrawCircle((int)location_x, (int)location_y, (int)radius, C_GREEN, TRUE);
+	if (hp >= 0) {
+		DrawCircle((int)location_x, (int)location_y, (int)radius, C_GREEN, TRUE);
+	}
 }
 
 void Enemy::Hit(int damage)

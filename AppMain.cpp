@@ -2,8 +2,8 @@
 #include "SceneManager.h"
 #include "FPS.h"
 #include "GameMainScene.h"
+#include "TitleScene.h"
 #include "Common.h"
-//#include "UI.h"
 
 #define _SCREEN_COLOR_BIT_16_ 16
 #define _SCREEN_COLOR_BIT_32_ 32
@@ -32,7 +32,7 @@ int WINAPI WinMain(_In_ HINSTANCE ih, _In_opt_ HINSTANCE ioh, _In_ LPSTR il, _In
 
 	SetDrawScreen(DX_SCREEN_BACK);	// 描画先画面を裏にする
 
-	SceneManager sceneMng(dynamic_cast<AbstractScene*>(new GameMainScene()));
+	SceneManager sceneMng(dynamic_cast<AbstractScene*>(new TitleScene()));
 	FPS fps;
 
 	//ゲームループ

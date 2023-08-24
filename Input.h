@@ -15,7 +15,7 @@ public:
 	static int x_now;
 	static int x_old;
 
-	static int y_flg;
+	static bool y_flg;
 	static int y_now;
 	static int y_old;
 

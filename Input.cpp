@@ -11,7 +11,7 @@ int Input::x_flg;
 int Input::x_now;
 int Input::x_old;
 
-int Input::y_flg;
+bool Input::y_flg;
 int Input::y_now;
 int Input::y_old;
 
@@ -22,14 +22,7 @@ void Input::Update()
 	key_flg = now_key & ~old_key;
 
 	GetJoypadAnalogInput(&x_buf, &y_buf, DX_INPUT_KEY_PAD1);
-
-	x_old = x_now;
-	x_now = x_buf;
-	x_flg = x_now & ~x_old;
-
-	y_old = y_now;
-	y_now = y_buf;
-	y_flg = y_now & ~y_old;
+	y_flg = false;
 }
 
 //ボタン入力
