@@ -10,7 +10,10 @@ class CharaBase;
 class GameMainScene :public AbstractScene
 {
 private:
-	int bulletsNum = 0;//デバッグ用変数
+	//デバッグ用変数
+	int bulletsNum = 0;
+	int Hit = 0;
+
 	//プレイヤー
 	Player player;
 	int life;//残機

@@ -10,13 +10,18 @@
 class Enemy :public CharaBase
 {
 private:
+	
 	int hp;//敵の体力
 	int point;//倒した時のポイント
 
 	float vectorX;
 	float vectorY;
-	
+
+	int shootCnt;//弾の発射するタイミングをカウント
+protected:
+
 public:
+	SphereCollider enemyCollider;
 
 	//コンストラクタ
 	Enemy();
@@ -44,5 +49,8 @@ public:
 
 	void X();
 	void Y();
+
+	float GetX();
+	float GetY();
 };
 

@@ -12,11 +12,12 @@
 class Bullet :public SphereCollider
 {
 private:
-	SphereCollider sphereCollider;
 
 protected:
 	
 public:
+	SphereCollider bulletCollider;
+
 	bool shootFlg;//発射中かどうか？
 	float x;
 	float y;
@@ -25,7 +26,7 @@ public:
 	float speed;
 	float angle;
 	float acceleration;
-	float angulVelocity;
+	float angleVelocity;
 
 	//コンストラクタ
 	Bullet();

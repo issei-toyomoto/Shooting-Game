@@ -1,21 +1,30 @@
 ﻿#include "Enemy.h"
 #include "DxLib.h"
 #include "Common.h"
+#include "GameMainScene.h"
 
 Enemy::Enemy() 
 {
-	location_x = 0;
-	location_y = 0;
+	location_x = 650;
+	location_y = 40;
 	radius = ENEMY_RADIUS;
 	hp = 5;
+	point = 10;
 }
 
 void Enemy::Update(GameMainScene* gameMain)
 {
-	location_x = 600;
+	shootCnt++;
+
+	if (shootCnt % 30 == 0) {
+		gameMain->SpawnBullet(location_x, location_y, ENEMY);
+	}
+
+	location_x = 650;
 	location_y = 40;
-	if (CheckCollision(sphereCollider) == 1) {
-		location_x = 800;
+
+	if (shootCnt > 60) {//１秒たったらカウントを０にする
+		shootCnt = 0;
 	}
 }
 
@@ -29,12 +38,24 @@ void Enemy::Hit(int damage)
 
 }
 
-void X() 
+void Enemy::X() 
 {
 
 }
 
-void Y() 
+void Enemy::Y() 
 {
 
+}
+
+float Enemy::GetX() 
+{
+	float x = location_x;
+	return x;
+}
+
+float Enemy::GetY() 
+{
+	float y = location_y;
+	return y;
 }

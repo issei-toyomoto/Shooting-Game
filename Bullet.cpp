@@ -1,6 +1,7 @@
 ﻿#include "Bullet.h"
 #include "DxLib.h"
 #include "Common.h"
+#include "Enemy.h"
 
 #define DEBUG
 
@@ -14,7 +15,7 @@ Bullet::Bullet()
 	speed = 0;
 	angle = 0;
 	acceleration = 0;
-	angulVelocity = 0;
+	angleVelocity = 0;
 }
 
 void Bullet::Update()
@@ -22,16 +23,12 @@ void Bullet::Update()
 	//当たり判定
 	location_x = x;
 	location_y = y;
+	radius = BULLET_RADIUS;
 
 	//座標処理
-	Y();
-	y -= speed;
+	y += speed;
 
-	if (CheckCollision(sphereCollider) == 1) {
-		shootFlg = false;
-	}
-
-	if (y <= 0) {
+	if (y <= 0 || y >= _SCREEN_HEIGHT_) {
 		shootFlg = false;
 	}
 }
@@ -60,5 +57,5 @@ void Bullet::X()
 
 void Bullet::Y()
 {
-	speed = BULLET_SPPED;
+	//speed = BULLET_SPPED;
 }

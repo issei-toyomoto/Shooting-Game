@@ -25,7 +25,7 @@ void Player::Update(GameMainScene* gameMain)
 
 	if (Input::Getkey(PAD_INPUT_B) == TRUE) {
 		
-		if (bBtnCnt % 6 == 0) {//６フレームごとに発射する
+		if (bBtnCnt % 10 == 0) {//６フレームごとに発射する
 			gameMain->SpawnBullet(location_x, location_y, PLAYER);
 			bullets++;
 		}
@@ -55,10 +55,10 @@ void Player::Draw() const
 	DrawFormatString(50, 0,   C_RED,   "Player");
 	DrawFormatString(50, 20,  C_WHITE, "StX %d", sx);
 	DrawFormatString(50, 40,  C_WHITE, "StY %d", sy);
-	DrawFormatString(50, 60,  C_WHITE, "X   %f", location_x);
-	DrawFormatString(50, 80,  C_WHITE, "Y   %f", location_y);
-	DrawFormatString(50, 100, C_WHITE, "VX  %f", vectorX);
-	DrawFormatString(50, 120, C_WHITE, "VY  %f", vectorY);
+	DrawFormatString(50, 60,  C_WHITE, "X   %.2f", location_x);
+	DrawFormatString(50, 80,  C_WHITE, "Y   %.2f", location_y);
+	DrawFormatString(50, 100, C_WHITE, "VX  %.2f", vectorX);
+	DrawFormatString(50, 120, C_WHITE, "VY  %.2f", vectorY);
 	DrawFormatString(50, 140, C_WHITE, "bullets %d", bullets);
 	DrawFormatString(50, 160, C_WHITE, "BCnt    %d", bBtnCnt);
 #endif // DEBUG
