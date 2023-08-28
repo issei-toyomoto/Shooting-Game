@@ -12,14 +12,22 @@ class Enemy :public CharaBase
 private:
 	int point;//倒した時のポイント
 
+	int positionNum;//敵のわき位置
+
 	float vectorX;
 	float vectorY;
 
 	int shootCnt;//弾の発射するタイミングをカウント
+
+	int drawCnt;//描画までのカウント
+	int drawCntNum;//描画するフレーム
+	int drawCntTmp;
+
 protected:
 
 public:
 	int hp;//敵の体力
+	bool drawFlg;
 
 	//コンストラクタ
 	Enemy();

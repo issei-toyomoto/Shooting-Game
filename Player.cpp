@@ -25,7 +25,7 @@ void Player::Update(GameMainScene* gameMain)
 
 	if (Input::Getkey(PAD_INPUT_B) == TRUE) {
 		
-		if (bBtnCnt % 10 == 0) {//６フレームごとに発射する
+		if (bBtnCnt % 10 == 0) {//10フレームごとに発射する
 			gameMain->SpawnBullet(location_x, location_y, PLAYER);
 			bullets++;
 		}

@@ -2,7 +2,7 @@
 #include "GameMainScene.h"
 #include "Input.h"
 
-#define DEBUG
+//#define DEBUG
 
 TitleScene::TitleScene()
 {

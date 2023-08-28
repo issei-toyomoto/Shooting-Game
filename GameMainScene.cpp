@@ -7,12 +7,13 @@
 GameMainScene::GameMainScene()
 {
 	//bullets = nullptr;
+	life = 1;
+	frameCnt = 0;
 }
 
 //デストラクタ
 GameMainScene::~GameMainScene() 
 {
-	life = 2;
 	delete[]enemy;
 	delete[]bullets;
 }
@@ -20,12 +21,23 @@ GameMainScene::~GameMainScene()
 //描画以外
 AbstractScene* GameMainScene::Update()
 {
+	frameCnt++;
+
+
 	player.Update(this);
-	enemy[0].Update(this);
+	for (int i = 0; i < MAX_ENEMY_NUM; i++) {
+		enemy[i].Update(this);
+	}
 	for (int i = 0; i < MAX_BULLET_NUM; i++) {
 		bullets[i].Update();
 	}
 	HitCheck();
+
+
+	if (frameCnt >= 180) {
+		frameCnt = 0;
+	}
+
 	return this;
 }
 
@@ -33,18 +45,17 @@ AbstractScene* GameMainScene::Update()
 void GameMainScene::Draw() const
 {
 	player.Draw();
-	enemy[0].Draw();
+	for (int i = 0; i < MAX_ENEMY_NUM; i++) {
+		enemy[i].Draw();
+	}
 	for (int i = 0; i < MAX_BULLET_NUM; i++) {
 		bullets[i].Draw();
-
-		if (bullets[i].y <= 0 || bullets[i].y >= _SCREEN_HEIGHT_) {
-			
-		}
 	}
 
 #ifdef DEBUG
 	DrawFormatString(500, 500, C_RED, "bulletsNum %d", bulletsNum);
 	DrawFormatString(500, 520, C_RED, "Hit %d", Hit);
+	DrawFormatString(500, 540, C_RED, "FrameCnt %d", frameCnt);
 #endif // DEBUG
 
 }
@@ -52,15 +63,38 @@ void GameMainScene::Draw() const
 //当たり判定のチェック処理
 void GameMainScene::HitCheck()
 {
-	//弾と敵の当たり判定
+	
 	for (int i = 0; i < MAX_BULLET_NUM; i++) {
-		for (int j = 0; j < MAX_ENEMY_NUM; j++) {
-			if (bullets[i].CheckCollision(enemy[j]) == 1) {
+		if (bullets[i].shootFlg == true) {
+			//弾と敵の当たり判定
+			for (int j = 0; j < MAX_ENEMY_NUM; j++) {
+				if (enemy[j].hp >= 0 && enemy[j].drawFlg == true && bullets[i].CheckCollision(enemy[j]) == 1) {
+					bullets[i].shootFlg = false;
+					enemy[j].hp--;
+
+				}
+			}
+
+			//弾とプレイヤーの当たり判定
+			if (bullets[i].CheckCollision(player) == 1) {
 				bullets[i].shootFlg = false;
-				enemy[j].hp--;
+				Hit++;
+				life--;
+			}
+
+			//弾と弾の当たり判定(未実装)
+			if (bullets[i].shootFlg == true) {
+				for (int j = 1; j < MAX_BULLET_NUM; j++) {
+					if (bullets[i].CheckCollision(bullets[j]) == 1) {
+						//bullets[i].shootFlg = false;
+						//bullets[j].shootFlg = false;
+					}
+				}
 			}
 		}
 	}
+
+	
 
 	//弾と弾の当たり判定
 	/*for (int i = 0; i < MAX_BULLET_NUM; i++) {

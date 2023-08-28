@@ -14,6 +14,8 @@ private:
 	int bulletsNum = 0;
 	int Hit = 0;
 
+	int frameCnt;
+
 	//プレイヤー
 	Player player;
 	int life;//残機
