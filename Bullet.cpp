@@ -26,9 +26,11 @@ void Bullet::Update()
 	radius = BULLET_RADIUS;
 
 	//座標処理
-	y += speed;
+	if (shootFlg == true) {
+		y += speed;
+	}
 
-	if (y <= 0 || y >= _SCREEN_HEIGHT_) {
+	if (y <= 0 || y >= _SCREEN_HEIGHT_) {//弾が画面外に居たら描画しない
 		shootFlg = false;
 	}
 }

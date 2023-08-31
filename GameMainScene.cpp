@@ -1,14 +1,12 @@
 ﻿#include "GameMainScene.h"
-#include "NwaySpawner.h"
 
-#define DEBUG
+//#define DEBUG
 
 //コンストラクタ
 GameMainScene::GameMainScene()
 {
 	//bullets = nullptr;
 	life = 1;
-	frameCnt = 0;
 }
 
 //デストラクタ
@@ -21,9 +19,6 @@ GameMainScene::~GameMainScene()
 //描画以外
 AbstractScene* GameMainScene::Update()
 {
-	frameCnt++;
-
-
 	player.Update(this);
 	for (int i = 0; i < MAX_ENEMY_NUM; i++) {
 		enemy[i].Update(this);
@@ -33,9 +28,10 @@ AbstractScene* GameMainScene::Update()
 	}
 	HitCheck();
 
-
-	if (frameCnt >= 180) {
-		frameCnt = 0;
+	for (int i = 0; i < MAX_ENEMY_NUM; i++) {
+		if (enemy[i].hp <= 0) {
+			totalScore = enemy[i].point;
+		}
 	}
 
 	return this;
@@ -52,10 +48,11 @@ void GameMainScene::Draw() const
 		bullets[i].Draw();
 	}
 
+	DrawFormatString(10, 0, C_WHITE, "Score:%d", totalScore);
+
 #ifdef DEBUG
 	DrawFormatString(500, 500, C_RED, "bulletsNum %d", bulletsNum);
 	DrawFormatString(500, 520, C_RED, "Hit %d", Hit);
-	DrawFormatString(500, 540, C_RED, "FrameCnt %d", frameCnt);
 #endif // DEBUG
 
 }
@@ -71,18 +68,18 @@ void GameMainScene::HitCheck()
 				if (enemy[j].hp >= 0 && enemy[j].drawFlg == true && bullets[i].CheckCollision(enemy[j]) == 1) {
 					bullets[i].shootFlg = false;
 					enemy[j].hp--;
-
+					Hit++;
 				}
 			}
 
 			//弾とプレイヤーの当たり判定
 			if (bullets[i].CheckCollision(player) == 1) {
 				bullets[i].shootFlg = false;
-				Hit++;
+				
 				life--;
 			}
 
-			//弾と弾の当たり判定(未実装)
+			//弾と弾の当たり判定(未実装)(フレームが下がるためコメントアウト中)
 			if (bullets[i].shootFlg == true) {
 				for (int j = 1; j < MAX_BULLET_NUM; j++) {
 					if (bullets[i].CheckCollision(bullets[j]) == 1) {
@@ -93,24 +90,12 @@ void GameMainScene::HitCheck()
 			}
 		}
 	}
-
-	
-
-	//弾と弾の当たり判定
-	/*for (int i = 0; i < MAX_BULLET_NUM; i++) {
-		for (int j = 1; j < MAX_BULLET_NUM; j++) {
-			if (bullets[i].CheckCollision(bullets[j]) == 1) {
-				bullets[i].shootFlg = false;
-				bullets[j].shootFlg = false;
-			}
-		}
-	}*/
 }
 
 //弾の配列に新しくデータを作る
 void GameMainScene::SpawnBullet(float location_x, float location_y, int chara)
 {
-	if (chara == PLAYER) {
+	if (chara == PLAYER) {//プレイヤーから出る弾のデータ
 		for (int i = 0; i < ONEWAY_PLAYER_BULLET_NUM; i++) {
 			if (bullets[i].shootFlg == false) {
 				bullets[i].speed = -BULLET_SPPED;
@@ -123,7 +108,7 @@ void GameMainScene::SpawnBullet(float location_x, float location_y, int chara)
 		}
 	}
 
-	if (chara == ENEMY) {
+	if (chara == ENEMY) {//敵から出る弾のデータ
 		for (int i = ONEWAY_PLAYER_BULLET_NUM; i < ONEWAY_ENEMY_BULLET_NUM; i++) {
 			if (bullets[i].shootFlg == false) {
 				bullets[i].speed = BULLET_SPPED;

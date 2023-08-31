@@ -14,17 +14,17 @@ private:
 	int bulletsNum = 0;
 	int Hit = 0;
 
-	int frameCnt;
 
 	//プレイヤー
-	Player player;
-	int life;//残機
+	Player player;	//プレイヤーのオブジェクト
+	int life;		//プレイヤー残機
+	int totalScore;	//現在のスコア
 
 	//敵
-	Enemy* enemy = new Enemy[MAX_ENEMY_NUM];
+	Enemy* enemy = new Enemy[MAX_ENEMY_NUM];//敵のオブジェクト
 
 	//弾
-	Bullet* bullets = new Bullet[MAX_BULLET_NUM];
+	Bullet* bullets = new Bullet[MAX_BULLET_NUM];//弾のオブジェクト
 
 protected:
 

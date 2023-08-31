@@ -3,8 +3,8 @@
 #include "Input.h"
 #include "GameMainScene.h"
 
-#define DEBUG
-#define DEBUG_COLLISON_SIRCLE
+//#define DEBUG
+//#define DEBUG_COLLISON_SIRCLE
 
 Player::Player() 
 {

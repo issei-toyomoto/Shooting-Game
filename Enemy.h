@@ -10,24 +10,23 @@
 class Enemy :public CharaBase
 {
 private:
-	int point;//倒した時のポイント
-
 	int positionNum;//敵のわき位置
 
-	float vectorX;
-	float vectorY;
+	float vectorX;	//ベクトルX軸（１フレームの移動量）
+	float vectorY;	//ベクトルY軸（１フレームの移動量）
 
-	int shootCnt;//弾の発射するタイミングをカウント
+	int shootCnt;	//弾の発射するタイミングをカウント
 
-	int drawCnt;//描画までのカウント
-	int drawCntNum;//描画するフレーム
-	int drawCntTmp;
+	int drawCnt;	//描画までのカウント
+	int drawCntNum;	//描画するフレーム
+	int drawCntTmp;	//描画までの時間を決める用の変数
 
 protected:
 
 public:
-	int hp;//敵の体力
-	bool drawFlg;
+	int hp;			//敵の体力
+	bool drawFlg;	//描画するか（true:描画 false:描画しない）
+	int point;		//倒した時のポイント
 
 	//コンストラクタ
 	Enemy();
